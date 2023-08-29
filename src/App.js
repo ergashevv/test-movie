@@ -4,6 +4,7 @@ import { Route, Routes } from "react-router";
 import Home from "./pages/home";
 import Movie from "./pages/movie";
 import Header from "./components/header/header";
+import "./assets/main.scss";
 
 function App() {
   return (
