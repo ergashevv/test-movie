@@ -10,6 +10,7 @@ const Home = () => {
   const [genre, setGenre] = useState();
   const [genreMovie, setGenreMovie] = useState();
   const [genreMovieId, setGenreMovieId] = useState();
+  const [randomMovie, setRandomMovie] = useState(null);
   //popular movies
   useEffect(() => {
     axios
@@ -27,6 +28,14 @@ const Home = () => {
         setIsLoading(false);
       });
   }, []);
+
+  // Select a random movie from the fetched list
+  useEffect(() => {
+    if (!isLoading && data.length > 0) {
+      const randomIndex = Math.floor(Math.random() * data.length);
+      setRandomMovie(data[randomIndex]);
+    }
+  }, [isLoading, data]);
 
   //movies genres list
   useEffect(() => {
@@ -107,6 +116,28 @@ const Home = () => {
             />
           </>
         ))}
+      </div>
+
+      <div>
+        {isLoading ? (
+          <p>Loading...</p>
+        ) : error ? (
+          <p>Error: {error.message}</p>
+        ) : (
+          randomMovie && (
+            <div>
+              <h2>Random Movie</h2>
+              <p>Title: {randomMovie.title}</p>
+              <p>Overview: {randomMovie.overview}</p>
+              <img
+                src={
+                  "https://image.tmdb.org/t/p/w500" + randomMovie?.poster_path
+                }
+                alt=""
+              />
+            </div>
+          )
+        )}
       </div>
     </>
   );
