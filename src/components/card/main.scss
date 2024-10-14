@@ -1,0 +1,15 @@
+.card {
+    width: 300px;
+    border: 1px solid black;
+    height: 530px;
+
+    img {
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .title-section {
+        height: 14%;
+        background-color: #d5b70a;
+    }
+}

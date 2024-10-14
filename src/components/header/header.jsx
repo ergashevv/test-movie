@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "./main.scss";
 import axios from "axios";
+import { Link } from "react-router-dom";
 const Header = () => {
   const [value, setValue] = useState("");
   const [data, setData] = useState();
@@ -22,29 +23,13 @@ const Header = () => {
   return (
     <>
       <div className="header">
-        <h1>Header</h1>
-        <input
-          className="search-input"
-          onChange={(e) => setValue(e.target.value)}
-          type="search"
-        />
-        <div className="search-movie">
-          {data?.map((i, k) => (
-            <div key={k}>
-              <img
-                src={"https://image.tmdb.org/t/p/w500" + i?.poster_path}
-                alt="img"
-              />
-              <h1
-                style={{
-                  color: "black",
-                }}
-              >
-                {i?.title}
-              </h1>
-            </div>
-          ))}
+        <div className="links">
+          <Link to={'/'}>Popular</Link>
+          <Link to={'/top_rated'}>Top rated</Link>
+          <Link to={'/upcoming'}>Up coming</Link>
+          <Link to={'/now_playing'}>Now playing</Link>
         </div>
+
       </div>
     </>
   );
