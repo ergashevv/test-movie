@@ -8,6 +8,7 @@ import "./assets/main.scss";
 import TopRated from "./pages/top-rated";
 import Upcoming from "./pages/upcoming";
 import NowPlaying from "./pages/now-playing";
+import MoviesGenres from "./pages/genre-movie";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/top_rated" element={<TopRated />} />
         <Route path="/upcoming" element={<Upcoming />} />
         <Route path="/now_playing" element={<NowPlaying />} />
+        <Route path="/genre/:genreId" element={<MoviesGenres />} />
 
         <Route path="/movie/:id" element={<Movie />} />
       </Routes>

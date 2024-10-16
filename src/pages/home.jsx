@@ -5,6 +5,7 @@ import "./main.scss";
 import MovieCard from "../components/card";
 import useFetch from "../hooks/fetch";
 import { Pagination } from "@mui/material";
+import MovieGenres from "../components/genres";
 
 const Home = () => {
   const [page, setPage] = useState(1);
@@ -16,9 +17,15 @@ const Home = () => {
 
   return (
     <>
-      {
-        loading && <h1>Loadingggg...</h1>
-      }
+      <div className="container">
+        <div className="genres">
+          <MovieGenres />
+        </div>
+      </div>
+
+
+
+
       <div className="cards container">
         {
           data?.results.map((item, key) => (
