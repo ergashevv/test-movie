@@ -9,11 +9,13 @@ import TopRated from "./pages/top-rated";
 import Upcoming from "./pages/upcoming";
 import NowPlaying from "./pages/now-playing";
 import MoviesGenres from "./pages/genre-movie";
+import ScrollToTop from "./components/sroll-to-top";
 
 function App() {
   return (
     <div className="App">
       <Header />
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/top_rated" element={<TopRated />} />

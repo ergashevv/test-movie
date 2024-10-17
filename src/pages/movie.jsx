@@ -1,6 +1,7 @@
 import { useParams } from "react-router"
 import useFetch from "../hooks/fetch";
 import './main.scss'
+import SimilarMoives from "../components/similar-movies";
 const Movie = () => {
   const { id } = useParams()
   const { data, loading, error } = useFetch(`movie/${id}`);
@@ -16,7 +17,9 @@ const Movie = () => {
           <h1>{data?.title}</h1>
         </div>
       </div>
-
+      <div className="similar container">
+        <SimilarMoives />
+      </div>
     </>
   )
 }
