@@ -11,7 +11,7 @@ const MovieCard = ({ img, title, id }) => {
                     <div className="title-section">
                         <h1>{title}</h1>
                     </div>
-
+                    <h1>Lorem, ipsum dolor.</h1>
                 </div>
             </Link>
         </>
