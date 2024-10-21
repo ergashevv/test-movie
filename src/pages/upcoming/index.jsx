@@ -3,7 +3,7 @@ import MovieCard from '../../components/card';
 import useFetch from '../../hooks/fetch';
 import './main.scss'
 const Upcoming = () => {
-    const { data, loading, error } = useFetch('movie/upcoming');
+    const { data } = useFetch('movie/upcoming');
 
     return (
         <>

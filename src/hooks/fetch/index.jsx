@@ -12,7 +12,7 @@ const useFetch = (url, page = null, genreId = "") => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                let fullUrl = baseUrl + url + token + genreId
+                let fullUrl = baseUrl + url + token + genreId;
 
                 if (page && !url.includes('/movie/')) {
                     fullUrl += `&page=${page}`;
@@ -21,6 +21,7 @@ const useFetch = (url, page = null, genreId = "") => {
                 const response = await axios.get(fullUrl);
                 console.log(response);
 
+                // axios avtomatik ravishda JSON formatini qaytaradi
                 setData(response.data);
                 setLoading(false);
             } catch (err) {
